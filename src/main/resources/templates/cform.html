@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<a href="/add">Add Cosmetics</a><br />
+<a href="/addcleaning">Add Cleaning items</a><br />
+
+<form action="#"
+      th:action="@{/process}"
+      th:object="${cosmetics}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />   <br />
+    CosmeticsBrand :<input type="text" th:field="*{brand}" />  <br />
+    Price :<input type="number" th:field="*{price}" />  <br />
+    Popularity :<input type="text" th:field="*{popularity}" />  <br />
+    <br />
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
